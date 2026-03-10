@@ -1,6 +1,6 @@
 # aboveR <img src="man/figures/logo.png" align="right" height="139" alt="aboveR hex sticker" />
 
-[![R-CMD-check](https://github.com/null-island-labs/aboveR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/null-island-labs/aboveR/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/chrislyonsKY/aboveR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/chrislyonsKY/aboveR/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/aboveR)](https://CRAN.R-project.org/package=aboveR)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![codecov](https://app.codecov.io/gh/null-island-labs/aboveR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/null-island-labs/aboveR)
@@ -93,8 +93,6 @@ MIT
 
 ## Author
 
-**Chris Lyons** — [Null Island Labs](https://github.com/null-island-labs) | [Null Island Dispatch](https://www.linkedin.com/in/chrislyonsky)
+**Chris Lyons**m
 
 ---
-
-<sub>Part of the [Null Island Labs](https://github.com/null-island-labs) geospatial toolkit</sub>
