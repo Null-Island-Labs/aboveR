@@ -1,9 +1,11 @@
-# aboveR <img src="man/figures/logo.png" align="right" height="139" alt="aboveR hex sticker" />
+# aboveR
+
+<img src="man/figures/logo.png" align="right" height="139" alt="aboveR hex sticker" />
 
 [![R-CMD-check](https://github.com/chrislyonsKY/aboveR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/chrislyonsKY/aboveR/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/aboveR)](https://CRAN.R-project.org/package=aboveR)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![codecov](https://app.codecov.io/gh/null-island-labs/aboveR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/null-island-labs/aboveR)
+[![codecov](https://app.codecov.io/gh/chrislyonsKY/aboveR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/chrislyonsKY/aboveR)
 
 > LiDAR Terrain Analysis and Change Detection from Above
 
@@ -17,7 +19,7 @@ install.packages("aboveR")
 
 # Or install the development version from GitHub
 # install.packages("pak")
-pak::pak("null-island-labs/aboveR")
+pak::pak("chrislyonsKY/aboveR")
 ```
 
 ## Quick Start
@@ -93,6 +95,4 @@ MIT
 
 ## Author
 
-**Chris Lyons**m
-
----
+**Chris Lyons** — [GitHub](https://github.com/chrislyonsKY) | [LinkedIn](https://www.linkedin.com/in/williamclyons)

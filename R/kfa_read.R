@@ -17,7 +17,7 @@
 #'
 #' @export
 #'
-#' @examplesIf aboveR:::has_s3_access()
+#' @examplesIf aboveR::has_s3_access()
 #' dem <- kfa_read_dem(
 #'   aoi = c(-84.55, 37.95, -84.45, 38.05),
 #'   phase = 2
@@ -88,7 +88,7 @@ kfa_read_dem <- function(aoi, phase = 2L, merge = TRUE, crop = TRUE,
 #'
 #' @export
 #'
-#' @examplesIf aboveR:::has_s3_access()
+#' @examplesIf aboveR::has_s3_access()
 #' \donttest{
 #' las <- kfa_read_pointcloud(
 #'   aoi = c(-84.55, 37.95, -84.54, 37.96),
@@ -144,7 +144,7 @@ kfa_read_pointcloud <- function(aoi, phase = 2L) {
 #'
 #' @export
 #'
-#' @examplesIf aboveR:::has_s3_access()
+#' @examplesIf aboveR::has_s3_access()
 #' \donttest{
 #' ortho <- kfa_read_ortho(
 #'   aoi = c(-84.55, 37.95, -84.54, 37.96),

@@ -23,7 +23,7 @@
 #'
 #' @export
 #'
-#' @examplesIf aboveR:::has_s3_access()
+#' @examplesIf aboveR::has_s3_access()
 #' # Find Phase 2 DEM tiles for a bounding box in Fayette County
 #' tiles <- kfa_find_tiles(
 #'   aoi = c(-84.55, 37.95, -84.45, 38.05),
@@ -86,7 +86,7 @@ kfa_find_tiles <- function(aoi, product = "dem", phase = 2L,
 #'
 #' @export
 #'
-#' @examplesIf aboveR:::has_s3_access()
+#' @examplesIf aboveR::has_s3_access()
 #' idx <- kfa_tile_index(product = "dem", phase = 2)
 #' head(idx)
 kfa_tile_index <- function(product = "dem", phase = 2L, max_age_days = 30L) {

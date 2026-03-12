@@ -1,7 +1,7 @@
 # GitHub Copilot Instructions — aboveR
 
 > LiDAR Terrain Analysis and Change Detection from Above
-> Part of [Null Island Labs](https://github.com/null-island-labs) R geospatial toolkit
+> R geospatial toolkit by [chrislyonsKY](https://github.com/chrislyonsKY)
 
 ## Package Context
 
@@ -43,7 +43,7 @@ KFA_CRS <- 3089L  # Kentucky Single Zone
 ## CRAN Compliance (Non-Negotiable)
 
 - All exported functions need `@returns` and `@examples` or `@examplesIf`
-- KyFromAbove examples use `@examplesIf aboveR:::has_s3_access()`
+- KyFromAbove examples use `@examplesIf aboveR::has_s3_access()`
 - Core analysis examples use bundled sample rasters in `inst/extdata/`
 - Never write outside `tempdir()` in examples or tests
 - Cache files go to `tools::R_user_dir("aboveR", "cache")`

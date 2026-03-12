@@ -22,7 +22,7 @@ and caches it locally. Subsequent calls use the cached copy unless
 it is older than \code{max_age_days}.
 }
 \examples{
-\dontshow{if (aboveR:::has_s3_access()) withAutoprint(\{ # examplesIf}
+\dontshow{if (aboveR::has_s3_access()) withAutoprint(\{ # examplesIf}
 idx <- kfa_tile_index(product = "dem", phase = 2)
 head(idx)
 \dontshow{\}) # examplesIf}

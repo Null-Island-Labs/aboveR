@@ -21,7 +21,7 @@ Finds ortho (nadir) or oblique imagery tiles covering the AOI
 and reads them as RGB SpatRaster.
 }
 \examples{
-\dontshow{if (aboveR:::has_s3_access()) withAutoprint(\{ # examplesIf}
+\dontshow{if (aboveR::has_s3_access()) withAutoprint(\{ # examplesIf}
 \donttest{
 ortho <- kfa_read_ortho(
   aoi = c(-84.55, 37.95, -84.54, 37.96),

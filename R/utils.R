@@ -122,8 +122,13 @@ as_sf_polygon <- function(aoi, target_crs = NULL) {
 #' is set, ensuring KyFromAbove examples never run on CRAN or in
 #' environments without verified S3 access.
 #'
-#' @returns Logical.
-#' @noRd
+#' @returns Logical scalar indicating whether the KyFromAbove test
+#'   environment variable is set.
+#'
+#' @export
+#'
+#' @examples
+#' has_s3_access()
 has_s3_access <- function() {
   nzchar(Sys.getenv("ABOVER_KFA_TEST"))
 }

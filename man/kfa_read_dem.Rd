@@ -26,7 +26,7 @@ GeoTIFFs via \verb{/vsicurl/}, optionally merges into a single raster,
 and crops to the AOI extent.
 }
 \examples{
-\dontshow{if (aboveR:::has_s3_access()) withAutoprint(\{ # examplesIf}
+\dontshow{if (aboveR::has_s3_access()) withAutoprint(\{ # examplesIf}
 dem <- kfa_read_dem(
   aoi = c(-84.55, 37.95, -84.45, 38.05),
   phase = 2

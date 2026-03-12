@@ -36,7 +36,7 @@ the STAC catalog first (if available), then falls back to the
 tile index GeoPackage on S3.
 }
 \examples{
-\dontshow{if (aboveR:::has_s3_access()) withAutoprint(\{ # examplesIf}
+\dontshow{if (aboveR::has_s3_access()) withAutoprint(\{ # examplesIf}
 # Find Phase 2 DEM tiles for a bounding box in Fayette County
 tiles <- kfa_find_tiles(
   aoi = c(-84.55, 37.95, -84.45, 38.05),
