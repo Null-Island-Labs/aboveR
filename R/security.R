@@ -13,8 +13,8 @@ sanitize_filename <- function(url) {
   # Extract the basename from the URL path
   parsed <- basename(sub("\\?.*$", "", url))
 
-  # Remove null bytes
-  parsed <- gsub(rawToChar(as.raw(0x00)), "", parsed, fixed = TRUE)
+  # Remove null bytes (use regex character class to avoid zero-length pattern)
+  parsed <- gsub("[\x01-\x1f]", "", parsed)
 
   # Remove path separators and dangerous characters
   parsed <- gsub("[/\\\\:*?\"<>|]", "_", parsed)

@@ -11,7 +11,8 @@ authors:
   - family-names: Lyons
     given-names: Chris
     email: chris.lyons@ky.gov
-    affiliation: Kentucky Division of Geographic Information
+    affiliation: Kentucky Energy and Environment Cabinet
+    orcid: https://orcid.org/0009-0009-2536-5667
 keywords:
   - LiDAR
   - terrain analysis

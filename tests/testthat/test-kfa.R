@@ -5,7 +5,7 @@ test_that("kfa_stac_search() requires rstac package", {
   # but should fail because STAC catalog isn't live
 
   expect_error(kfa_stac_search(c(-84.5, 38, -84.4, 38.1)),
-               "STAC catalog not yet available")
+               "rstac|STAC catalog not yet available")
 })
 
 test_that("kfa_find_tiles() validates phase argument", {
