@@ -11,3 +11,16 @@
 ^data-raw$
 ^CRAN-SUBMISSION$
 ^\.claude$
+^CODE_OF_CONDUCT\.md$
+^CONTRIBUTING\.md$
+^SECURITY\.md$
+^codecov\.yml$
+^ATTRIBUTION\.md$
+^CHANGELOG\.md$
+^DEVELOPMENT\.md$
+^DISCLAIMER\.md$
+^GOVERNANCE\.md$
+^MAINTAINERS\.md$
+^PRIVACY\.md$
+^RESPONSIBLE_USE\.md$
+^SUPPORT\.md$

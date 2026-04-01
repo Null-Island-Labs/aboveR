@@ -1,0 +1,60 @@
+name: Bug Report
+description: Report a bug in aboveR
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please fill out the sections below.
+
+  - type: input
+    id: version
+    attributes:
+      label: aboveR version
+      description: "Run: packageVersion('aboveR')"
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: r-version
+    attributes:
+      label: R version
+      description: "Run: R.version.string"
+      placeholder: "R version 4.4.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - Windows
+        - macOS
+        - Linux
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: code
+    attributes:
+      label: Code to reproduce
+      description: Minimal code snippet that reproduces the issue
+      render: r
+
+  - type: textarea
+    id: traceback
+    attributes:
+      label: Error output
+      description: Full error message and traceback if applicable
+      render: text
