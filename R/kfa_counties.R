@@ -19,7 +19,7 @@
 #' bbox <- kfa_county_bbox("Fayette")
 #' print(bbox)
 #'
-#' @examplesIf aboveR:::has_s3_access()
+#' @examplesIf aboveR::has_s3_access()
 #' # Use directly with kfa_find_tiles
 #' tiles <- kfa_find_tiles(kfa_county_bbox("Fayette"), product = "dem")
 kfa_county_bbox <- function(county) {

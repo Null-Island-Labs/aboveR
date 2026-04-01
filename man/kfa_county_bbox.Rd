@@ -23,7 +23,7 @@ an AOI manually.
 bbox <- kfa_county_bbox("Fayette")
 print(bbox)
 
-\dontshow{if (aboveR:::has_s3_access()) withAutoprint(\{ # examplesIf}
+\dontshow{if (aboveR::has_s3_access()) withAutoprint(\{ # examplesIf}
 # Use directly with kfa_find_tiles
 tiles <- kfa_find_tiles(kfa_county_bbox("Fayette"), product = "dem")
 \dontshow{\}) # examplesIf}
