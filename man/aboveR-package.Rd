@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Terrain change detection, cut and fill volume estimation, terrain profiling, reclamation monitoring, erosion analysis, and flood risk assessment from 'LiDAR' (Light Detection and Ranging) point clouds and digital elevation models ('DEMs'). Applications include surface mine reclamation monitoring, sediment pond capacity tracking, highwall safety classification, and erosion channel detection. Built on 'lidR' for point cloud I/O and 'terra' for raster operations. Includes access utilities for 'KyFromAbove' cloud-native elevation data on Amazon Web Services ('AWS') \url{https://kyfromabove.ky.gov/}. Methods for terrain change detection and volume estimation follow Li and others (2005) \doi{10.1016/j.geomorph.2004.10.007}.
+Terrain change detection, cut and fill volume estimation, terrain profiling, flood inundation analysis, slope and aspect computation, hillshade generation, contour extraction, reclamation monitoring, erosion analysis, and engineering export (LandXML, STL) from 'LiDAR' (Light Detection and Ranging) point clouds and digital elevation models ('DEMs'). Applications include surface mine reclamation monitoring, sediment pond capacity tracking, highwall safety classification, and erosion channel detection. Built on 'lidR' for point cloud I/O and 'terra' for raster operations. Includes access utilities for 'KyFromAbove' cloud-native elevation data on Amazon Web Services ('AWS') \url{https://kyfromabove.ky.gov/}. Methods for terrain change detection and volume estimation follow Li and others (2005) \doi{10.1016/j.geomorph.2004.10.007}.
 }
 \seealso{
 Useful links:

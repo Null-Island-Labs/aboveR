@@ -5,7 +5,7 @@
 [![R-CMD-check](https://github.com/chrislyonsKY/aboveR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/chrislyonsKY/aboveR/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/aboveR)](https://CRAN.R-project.org/package=aboveR)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![codecov](https://app.codecov.io/gh/chrislyonsKY/aboveR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/chrislyonsKY/aboveR)
+[![codecov](https://codecov.io/gh/chrislyonsKY/aboveR/branch/main/graph/badge.svg)](https://codecov.io/gh/chrislyonsKY/aboveR)
 
 > LiDAR Terrain Analysis and Change Detection from Above
 
