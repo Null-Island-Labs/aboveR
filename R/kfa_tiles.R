@@ -118,16 +118,8 @@ kfa_tile_index <- function(product = "dem", phase = 2L, max_age_days = 30L) {
       "_Phase", phase, "_TileIndex.gpkg"
     )
 
-    tryCatch(
-      utils::download.file(index_url, cache_file, mode = "wb", quiet = TRUE),
-      error = function(e) {
-        stop(
-          "Failed to download tile index from:\n  ", index_url, "\n",
-          "Check your internet connection and that the tile index exists.",
-          call. = FALSE
-        )
-      }
-    )
+    validate_kfa_url(index_url)
+    safe_download(index_url, cache_file, max_size_mb = 200, timeout_sec = 120L)
   }
 
   sf::st_read(cache_file, quiet = TRUE)

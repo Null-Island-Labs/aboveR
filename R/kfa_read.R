@@ -29,27 +29,17 @@ kfa_read_dem <- function(aoi, phase = 2L, merge = TRUE, crop = TRUE,
     stop("No DEM tiles found for this AOI and phase.", call. = FALSE)
   }
 
-  urls <- tiles$s3_url
-  if (is.null(urls) && "aws_url" %in% names(tiles)) {
-    urls <- tiles$aws_url
-  }
-  if (is.null(urls) || all(is.na(urls))) {
-    # Build URLs from key column if available
-    if ("key" %in% names(tiles)) {
-      urls <- paste0(KFA_BASE_URL, "/", tiles$key)
-    } else {
-      stop("Cannot determine S3 URLs from tile index.", call. = FALSE)
-    }
-  }
+  urls <- resolve_tile_urls(tiles)
+  validate_kfa_urls(urls)
 
   if (cache) {
     cache_dir <- file.path(tools::R_user_dir("aboveR", "cache"), "dem",
                             paste0("phase", phase))
     dir.create(cache_dir, recursive = TRUE, showWarnings = FALSE)
-    local_files <- file.path(cache_dir, basename(urls))
+    local_files <- file.path(cache_dir, vapply(urls, sanitize_filename, character(1)))
     for (i in seq_along(urls)) {
       if (!file.exists(local_files[i])) {
-        utils::download.file(urls[i], local_files[i], mode = "wb", quiet = TRUE)
+        safe_download(urls[i], local_files[i], max_size_mb = 500)
       }
     }
     rasters <- lapply(local_files, terra::rast)
@@ -101,24 +91,15 @@ kfa_read_pointcloud <- function(aoi, phase = 2L) {
     stop("No point cloud tiles found for this AOI and phase.", call. = FALSE)
   }
 
-  urls <- tiles$s3_url
-  if (is.null(urls) && "aws_url" %in% names(tiles)) {
-    urls <- tiles$aws_url
-  }
-  if (is.null(urls) || all(is.na(urls))) {
-    if ("key" %in% names(tiles)) {
-      urls <- paste0(KFA_BASE_URL, "/", tiles$key)
-    } else {
-      stop("Cannot determine S3 URLs from tile index.", call. = FALSE)
-    }
-  }
+  urls <- resolve_tile_urls(tiles)
+  validate_kfa_urls(urls)
 
   # Download to tempdir since lidR needs local files for LAZ
   tmp_dir <- tempdir()
-  local_files <- file.path(tmp_dir, basename(urls))
+  local_files <- file.path(tmp_dir, vapply(urls, sanitize_filename, character(1)))
   for (i in seq_along(urls)) {
     if (!file.exists(local_files[i])) {
-      utils::download.file(urls[i], local_files[i], mode = "wb", quiet = TRUE)
+      safe_download(urls[i], local_files[i], max_size_mb = 2000, timeout_sec = 600L)
     }
   }
 
@@ -164,17 +145,8 @@ kfa_read_ortho <- function(aoi, phase = 3L, type = c("nadir", "oblique")) {
     stop("No imagery tiles found for this AOI and phase.", call. = FALSE)
   }
 
-  urls <- tiles$s3_url
-  if (is.null(urls) && "aws_url" %in% names(tiles)) {
-    urls <- tiles$aws_url
-  }
-  if (is.null(urls) || all(is.na(urls))) {
-    if ("key" %in% names(tiles)) {
-      urls <- paste0(KFA_BASE_URL, "/", tiles$key)
-    } else {
-      stop("Cannot determine S3 URLs from tile index.", call. = FALSE)
-    }
-  }
+  urls <- resolve_tile_urls(tiles)
+  validate_kfa_urls(urls)
 
   vsicurl_urls <- paste0("/vsicurl/", urls)
   rasters <- lapply(vsicurl_urls, terra::rast)
@@ -187,4 +159,26 @@ kfa_read_ortho <- function(aoi, phase = 3L, type = c("nadir", "oblique")) {
 
   aoi_sf <- as_sf_polygon(aoi, target_crs = terra::crs(r))
   terra::crop(r, terra::vect(aoi_sf))
+}
+
+#' Resolve S3 URLs from Tile Index Results
+#'
+#' Extracts or builds S3 URLs from tile index columns.
+#'
+#' @param tiles sf data frame from [kfa_find_tiles()].
+#' @returns Character vector of HTTPS URLs.
+#' @noRd
+resolve_tile_urls <- function(tiles) {
+  urls <- tiles$s3_url
+  if (is.null(urls) && "aws_url" %in% names(tiles)) {
+    urls <- tiles$aws_url
+  }
+  if (is.null(urls) || all(is.na(urls))) {
+    if ("key" %in% names(tiles)) {
+      urls <- paste0(KFA_BASE_URL, "/", tiles$key)
+    } else {
+      stop("Cannot determine S3 URLs from tile index.", call. = FALSE)
+    }
+  }
+  urls
 }
