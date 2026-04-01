@@ -9,14 +9,32 @@ kfa_stac_search(aoi, collection = NULL, datetime = NULL)
 \arguments{
 \item{aoi}{An \link[sf:sf]{sf::sf} object or numeric bbox.}
 
-\item{collection}{Character. STAC collection ID.}
+\item{collection}{Character. STAC collection ID (e.g.,
+\code{"dem_phase2"}).}
 
-\item{datetime}{Character. ISO 8601 datetime or range.}
+\item{datetime}{Character. ISO 8601 datetime or range
+(e.g., \code{"2023-01-01/2023-12-31"}).}
 }
 \value{
-A tibble of STAC items with asset URLs.
+An \link[sf:sf]{sf::sf} data frame of STAC items with asset URLs, or
+an error if the STAC catalog is not yet available.
 }
 \description{
 Queries the KyFromAbove STAC catalog for items matching an area
-of interest and product type. Requires the 'rstac' package.
+of interest and product type. Requires the \pkg{rstac} package.
+}
+\details{
+The KyFromAbove STAC catalog is under active development by
+Ian Horn (github.com/ianhorn/kyfromabove-stac). This function
+will be activated when the catalog is live. In the meantime,
+use \code{\link[=kfa_find_tiles]{kfa_find_tiles()}} with \code{method = "index"}.
+}
+\examples{
+\dontshow{if (FALSE) withAutoprint(\{ # examplesIf}
+# STAC catalog not yet available — use kfa_find_tiles() instead
+tiles <- kfa_find_tiles(
+  aoi = c(-84.55, 37.95, -84.45, 38.05),
+  product = "dem", phase = 2
+)
+\dontshow{\}) # examplesIf}
 }
