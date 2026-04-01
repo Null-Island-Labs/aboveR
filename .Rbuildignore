@@ -24,3 +24,5 @@
 ^PRIVACY\.md$
 ^RESPONSIBLE_USE\.md$
 ^SUPPORT\.md$
+^\.zenodo\.json$
+^CITATION\.cff$

@@ -1,0 +1,38 @@
+{
+  "title": "aboveR: LiDAR Terrain Analysis and Change Detection from Above",
+  "description": "R package for terrain change detection, cut/fill volume estimation, terrain profiling, flood inundation analysis, slope/aspect/hillshade computation, contour extraction, reclamation monitoring, erosion analysis, and engineering export from LiDAR point clouds and DEMs. Includes access utilities for KyFromAbove cloud-native elevation data on AWS.",
+  "creators": [
+    {
+      "name": "Lyons, Chris",
+      "affiliation": "Kentucky Energy and Environment Cabinet, Division of Information Services, GIS Branch",
+      "orcid": ""
+    }
+  ],
+  "keywords": [
+    "LiDAR",
+    "terrain analysis",
+    "change detection",
+    "DEM",
+    "R",
+    "KyFromAbove",
+    "volume estimation",
+    "flood analysis",
+    "GIS",
+    "remote sensing"
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/chrislyonsKY/aboveR",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://kyfromabove.ky.gov",
+      "relation": "references",
+      "scheme": "url"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "aboveR: LiDAR Terrain Analysis and Change Detection from Above"
+version: 1.0.0
+date-released: 2026-04-01
+license: MIT
+url: https://github.com/chrislyonsKY/aboveR
+repository-code: https://github.com/chrislyonsKY/aboveR
+authors:
+  - family-names: Lyons
+    given-names: Chris
+    email: chris.lyons@ky.gov
+    affiliation: Kentucky Division of Geographic Information
+keywords:
+  - LiDAR
+  - terrain analysis
+  - change detection
+  - DEM
+  - R
+  - KyFromAbove
+  - volume estimation
+  - flood analysis
+references:
+  - type: article
+    title: "Multi-scale quantification of land disturbance and reclamation"
+    authors:
+      - family-names: Li
+    year: 2005
+    doi: 10.1016/j.geomorph.2004.10.007
+    journal: Geomorphology
